@@ -34,7 +34,7 @@
     <p class="copy_right"></p>
     <p class="year"></p>
     <hr>
-    <div class="show_stuff">
+    <div class="show_verses">
 
     </div>
 
