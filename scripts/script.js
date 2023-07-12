@@ -11,13 +11,10 @@ var bookSelect = form.book;
 var chapterSelect = form.chapter;
 var verseSelect = form.verse;
 
-
-
-
 // Bible translations
 var BIBLES = [
   "afri",
-  "akjv",
+  "kjv",
   "asv",
   "asvs",
   "bishops" ,
