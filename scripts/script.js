@@ -3,6 +3,7 @@ var copyRight = document.querySelector(".copy_right");
 var year = document.querySelector(".year");
 
 var showVerses = document.querySelector(".show_verses");
+var dinaye = document.querySelector(".dinaye");
 
 // Different form option select values
 var bibleSelect = form.bible;
@@ -176,6 +177,15 @@ form.verse.addEventListener("input", () => {
   verseInput();
 
 });
+
+window.addEventListener("load", ()=> {
+  let h6 = document.createElement("h6");
+  const pb = "Powered by ";
+  const him = "Tuhumbata Immanuel Hamhola ";
+  const copy = "&#174; 2023"
+  h6.innerHTML = `${pb}${him}${copy}`;
+  dinaye.appendChild(h6);
+})
 
 
 
