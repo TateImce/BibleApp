@@ -28,7 +28,7 @@ var BIBLES = [
 
 // Async function to fetch json files
 async function fetchJSONfile(File) {
-  const response = await fetch(`http://bibleapp/json/${File}.json`);
+  const response = await fetch(`/json/${File}.json`);
   // Same as but better than:
   // const response = await fetch("http://bibleapp/json/" + File + ".json");
   const bibleFile = await response.json();
@@ -67,7 +67,7 @@ window.addEventListener("load", () => {
   // promises that resolve when each bible is fetched and processed
   let promises = BIBLES.map(async (bible) => {
     // url from which to fetch bible
-    bible = `http://bibleapp/json/${bible}.json`;
+    bible = `/json/${bible}.json`;
 
     const response = await fetch(bible);
     const biblejson = await response.json();
