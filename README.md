@@ -1,11 +1,9 @@
-**BIBLEAPP**
+<h2>BIBLEAPP</h2>
 
 👋 Hi, I’m @TateImce
 
-
 **DESCRIPTION**
-
-This a fun little straight forward web app that draws values from bible json files and displays them on the page. The script is done using vanilla javascript and styling with bootstrap.
+<p>This a fun little straight forward web app that draws values from bible json files and displays them on the page. The script is done using vanilla javascript and styling with bootstrap.</p>
 
 **SHOUT OUT**
 
