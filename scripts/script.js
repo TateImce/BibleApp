@@ -4,7 +4,6 @@ var year = document.querySelector(".year");
 
 var showVerses = document.querySelector(".show_verses");
 
-
 // Different form option select values
 var bibleSelect = form.bible;
 var bookSelect = form.book;
@@ -25,8 +24,6 @@ var BIBLES = [
   // "tyndale", // Has mistakes
   "web"
 ];
-
-
 
 // Async function to fetch json files
 async function fetchJSONfile(File) {
@@ -53,7 +50,6 @@ function newOptionsInitSelected(textContent, value) {
   option.selected = true;
   return option;
 }
-
 
 // ______________________________________
 //___ WHEN PAGE LOADS __ //
@@ -102,8 +98,6 @@ window.addEventListener("load", () => {
       console.error('An error occurred:', error);
     });
 });
-
-
 
 // ______________________________________
 //___ BIBLE TRANSLATION INPUT EVENT __ //
@@ -339,3 +333,5 @@ function bookNameInput() {
         });
       }  
   }
+
+  

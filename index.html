@@ -10,32 +10,44 @@
     <title>Bible App</title>
 </head>
 
-<body class="bg-secondary">
-    <hr>
-    <form id="the_form">
-        <label for="bible">Bible Translation</label>
-        <select name="bible" id="bible">
-            <option value="empty">Select</option>
-        </select>
-        <label for="book">Book</label>
-        <select name="book" id="book">
-            <option value="empty">Select</option>
-        </select>
-        <label for="chapter">Chapter</label>
-        <select name="chapter" id="chapter">
-            <option value="empty">Select</option>
-        </select>
-        <label for="verse">Verse</label>
-        <select name="verse" id="verse">
-            <option value="empty">Select</option>
-        </select>
-        <input type="submit" value="Submit">
-    </form>
-    <p class="copy_right"></p>
-    <p class="year"></p>
-    <hr>
-    <div class="show_verses">
+<body class="">
+    <div class="container w-75">
+        <header class="m-2">
+            <h2><span class="badge bg-primary shadow">Quick BIBLE App</span></h2>
+        </header>
+        <section>
+            <form class="row" id="the_form">
+                <label class="fw-bold" for="bible">Bible Translation</label>
+                <select class="form-control" name="bible" id="bible">
+                    <option value="empty">Select</option>
+                </select>
+                <label class="fw-bold" for="book">Book</label>
+                <select class="form-control" name="book" id="book">
+                    <option value="empty">Select</option>
+                </select>
+                <label class="fw-bold" for="chapter">Chapter</label>
+                <select class="form-control" name="chapter" id="chapter">
+                    <option value="empty">Select</option>
+                </select>
+                <label class="fw-bold" for="verse">Verse</label>
+                <select class="form-control" name="verse" id="verse">
+                    <option value="empty">Select</option>
+                </select>
+            </form>
+        </section>
+        <section class="d-flex flex-row mt-3">
+            <p class="year me-2"></p>
+            <p class="vr"></p>
+            <p class="copy_right ms-2"></p>
+        </section>
+        <section class="row border border-black-50 bg-light rounded-2">
+            <div class="show_verses m-1">
 
+            </div>
+        </section>
+        <footer class="mt-3">
+            <h6>Powered by Tuhumbata Immanuel Hamhola </h6>
+        </footer>
     </div>
 
     <script src="/scripts/bootstrap.bundle.min.js"></script>
