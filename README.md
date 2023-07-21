@@ -1,13 +1,15 @@
 **BIBLEAPP**
+
 👋 Hi, I’m @TateImce
+
 
 **DESCRIPTION**
 
-This a straight forward little web app that draws values from bible .json files and displays them on the page. The script is done in vanilla javascript and styling with bootstrap.
+This a fun little straight forward web app that draws values from bible json files and displays them on the page. The script is done using vanilla javascript and styling with bootstrap.
 
 **SHOUT OUT**
 
-A special acknowledgement to the Bible Super Search at https://www.biblesupersearch.com for the json files.
+A special acknowledgement to the Bible Super Search site at https://www.biblesupersearch.com for the free json files.
 
 This program is just an exercise that I needed to do, but if you are interested let me know, perhaps I can improve on it.
 
