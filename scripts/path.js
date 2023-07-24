@@ -1,6 +1,6 @@
 // The following script obviously deals with our links
 
-var path = "http://bibleapp/"
+var path = "https://bibleapp/"
 // var path = "https://tateimce.github.io/BibleApp/"
 // var path = "";
 
