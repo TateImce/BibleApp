@@ -176,7 +176,6 @@ form.chapter.addEventListener("input", () => {
 // _________________________
 form.verse.addEventListener("input", () => {
   verseInput();
-
 });
 
 window.addEventListener("load", ()=> {
