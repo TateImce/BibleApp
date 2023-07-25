@@ -1,7 +1,7 @@
 // The following script obviously deals with our links
 
-var path = "http://bibleapp/"
-// var path = "https://tateimce.github.io/bibleapp/"
+// var path = "http://bibleapp/"
+var path = "https://tateimce.github.io/bibleapp/"
 // var path = "";
 
 var head = document.head;
