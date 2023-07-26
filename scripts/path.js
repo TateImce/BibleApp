@@ -36,6 +36,7 @@ scrptLin2.async = false;
 /* Dynamically inserted scripts (using document.createElement()) 
 load asynchronously by default, so to turn on synchronous loading 
 (i.e. scripts load in the order they were inserted) set async="false". */
+console.log(scrptLin2.src);
 
 // Append only after DOM is loaded
 document.addEventListener("DOMContentLoaded", ()=> {
