@@ -68,7 +68,6 @@ window.addEventListener("load", () => {
   let promises = BIBLES.map(async (bible) => {
     // url from which to fetch bible
     bible = `${path}resources/${bible}.json`;
-    console.log(bible);
 
     const response = await fetch(bible);
     const biblejson = await response.json();

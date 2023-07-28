@@ -14,7 +14,6 @@ var body = document.body;
 var cssLink1 = document.createElement("link");
 cssLink1.rel = "stylesheet";
 cssLink1.href = `${path}style/bootstrap.min.css`;
-console.log(cssLink1.href);
 
 // Main css link
 var cssLink2 = document.createElement("link");
@@ -36,7 +35,6 @@ scrptLin2.async = false;
 /* Dynamically inserted scripts (using document.createElement()) 
 load asynchronously by default, so to turn on synchronous loading 
 (i.e. scripts load in the order they were inserted) set async="false". */
-console.log(scrptLin2.src);
 
 // Append only after DOM is loaded
 document.addEventListener("DOMContentLoaded", ()=> {
