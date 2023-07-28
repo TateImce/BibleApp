@@ -14,7 +14,6 @@ var body = document.body;
 var cssLink1 = document.createElement("link");
 cssLink1.rel = "stylesheet";
 cssLink1.href = `${path}style/bootstrap.min.css`;
-console.log(cssLink1.href);
 
 // Main css link
 var cssLink2 = document.createElement("link");
