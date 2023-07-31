@@ -1,9 +1,15 @@
+var body = document.body;
+// remove toggle attribute from body
+body.toggleAttribute("hidden");
+
 var form = document.getElementById("the_form");
 var copyRight = document.querySelector(".copy_right");
 var year = document.querySelector(".year");
 
 var showVerses = document.querySelector(".show_verses");
 var dinaye = document.querySelector(".dinaye");
+
+var spinner = document.querySelector(".theSpinner")
 
 // Different form option select values
 var bibleSelect = form.bible;
@@ -94,27 +100,34 @@ window.addEventListener("load", () => {
       bibleSelect0OptionElements.forEach((option) => {
         bibleSelect0.appendChild(option);
       });
+      
+      // Hide spinner
+      spinner.classList.add("visually-hidden");
+      
     })
     .catch((error) => {
       console.error('An error occurred:', error);
     });
-});
-
-// ______________________________________
-//___ BIBLE TRANSLATION INPUT EVENT __ //
-// ______________________________________ 
-form.bible.addEventListener("input", () => {
+  });
   
+  // ______________________________________
+  //___ BIBLE TRANSLATION INPUT EVENT __ //
+  // ______________________________________ 
+  form.bible.addEventListener("input", () => {
+    
+    // show spinner
+    spinner.classList.remove("visually-hidden");
+
   // Current condition of the form
   let form1 = document.getElementById("the_form");
   let bibleSelect1 = form1.bible;
   let bookSelect1 = form1.book;
   let previousBook = bookSelect1.value
-
-    // Clear everything before proceeding
-    bookSelect1.innerHTML = null;
-    // And rebuild again
-    bookSelect1.appendChild(newOptionsInit("Select", "empty"));
+  
+  // Clear everything before proceeding
+  bookSelect1.innerHTML = null;
+  // And rebuild again
+  bookSelect1.appendChild(newOptionsInit("Select", "empty"));
   
   // Run only through this one selected bible
   fetchJSONfile(bibleSelect1.value).then((biblejson) => {
@@ -128,26 +141,30 @@ form.bible.addEventListener("input", () => {
     // Iterate through entire verse array
     let bookPLUS = 0;
     for (let i = 0; i < bible.verses.length; i++) {
-
+      
       let bookNumber = bible.verses[i].book;
       let bookName = bible.verses[i].book_name;
       
       // Create and append option element only if 
       if (bookPLUS != bookNumber ) {
-          if (previousBook === bookName) {
-            // Book name option for selected option
-            chapterInput()
-            bookSelect1.appendChild(newOptionsInitSelected(bookName, bookName));
-            
-          } else {
-            // Book name options for selection
-            bookSelect1.appendChild(newOptionsInit(bookName, bookName));
-          }
+        if (previousBook === bookName) {
+          // Book name option for selected option
+          chapterInput()
+          bookSelect1.appendChild(newOptionsInitSelected(bookName, bookName));
           
-          bookPLUS++
-          
+        } else {
+          // Book name options for selection
+          bookSelect1.appendChild(newOptionsInit(bookName, bookName));
         }
+        
+        bookPLUS++
+        
+      }
     }
+
+    // Hide spinner
+    spinner.classList.add("visually-hidden");
+
   });
 })
 
@@ -238,12 +255,14 @@ function verseInput() {
 // __BOOK INPUT FUNCTION__ //
 function bookNameInput() {
   
+    // show spinner
+    spinner.classList.remove("visually-hidden");
+
     // Current condition of the form
     let form2 = document.getElementById("the_form");
     let bibleSelect2 = form2.bible;
     let bookSelect2 = form2.book;
     let chapterSelect2 = form2.chapter;
-
 
     // Clear everything before proceeding
     chapterSelect2.innerHTML = null;
@@ -275,15 +294,21 @@ function bookNameInput() {
           }
 
         }
-
+        
       });
     }  
+    // Hide spinner
+    spinner.classList.add("visually-hidden");
+
   }
 
 
   // __CHAPTER INPUT FUNCTION__ //
   function chapterInput() {
-  
+      
+      // show spinner
+      spinner.classList.remove("visually-hidden");
+      
       // Current condition of the form
       let form3 = document.getElementById("the_form");
       let bibleSelect3 = form3.bible;
@@ -340,7 +365,10 @@ function bookNameInput() {
           }
   
         });
-      }  
+      }
+      // Hide spinner  
+      spinner.classList.add("visually-hidden");
+
   }
 
   

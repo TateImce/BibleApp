@@ -2,20 +2,25 @@
 <html lang="en">
 
 <head>
+    <title>Quick BIBLE App</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bible App</title>
+    <link rel="shortcut icon" href="/img/Q.png" type="image/x-icon">
     <!-- Dynamics links -->
 </head>
- 
-<body class="">
+<!-- Body hidden until styles are loaded -->
+<body hidden>
     <div class="container w-75">
         <header class="m-2">
-            <h2><span class="badge bg-primary shadow">Quick BIBLE App</span></h2>
+            <h1><span class="badge bg-primary shadow">Quick BIBLE App</span></h1>
         </header>
         <section>
             <form class="row" id="the_form">
+                <div class="text-center theSpinner m-3">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <span class="">Loading... Please Wait</span>
+                </div>
                 <label class="fw-bold" for="bible">Bible Translation</label>
                 <select class="form-control" name="bible" id="bible">
                     <option value="empty">Select</option>
@@ -34,6 +39,7 @@
                 </select>
             </form>
         </section>
+
         <section class="d-flex flex-row mt-3">
             <p class="year me-2"></p>
             <p class="vr"></p>
