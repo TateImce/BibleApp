@@ -23,7 +23,7 @@ window.addEventListener("load", ()=> {
   let h6 = document.createElement("h6");
   const pb = "Powered by ";
   const him = "Tuhumbata Immanuel Hamhola ";
-  const copy = "&#174; 2023"
+  const copy = "&#169; 2023"
   h6.innerHTML = `${pb}${him}${copy}`;
   dinaye.appendChild(h6);
 })
@@ -31,20 +31,10 @@ window.addEventListener("load", ()=> {
 //_______________________
 // __LOADING SPINNER__ //|
 //_______________________|
-function shoSpinaHideForm() {
-  // Show spinner
-  // spinner.classList.remove("visually-hidden");
+function shoHideSpinaAndForm() {
+  // Show/Hide spinner
   spinner.toggleAttribute("hidden");
-  // Hide form section
-  // formSec.classList.add("visually-hidden");
-  formSec.toggleAttribute("hidden");
-}
-function hideSpinaShoForm() {
-  // Hide spinner
-  // spinner.classList.add("visually-hidden");
-  spinner.toggleAttribute("hidden");
-  // Show form section 
-  // formSec.classList.remove("visually-hidden");
+  // Show/Hide form section
   formSec.toggleAttribute("hidden");
 }
 
@@ -133,7 +123,7 @@ window.addEventListener("load", () => {
         bibleSelect0.appendChild(option);
       });
       
-      hideSpinaShoForm();
+      shoHideSpinaAndForm();
 
     })
     .catch((error) => {
@@ -147,7 +137,7 @@ window.addEventListener("load", () => {
   // ______________________________________ 
   form.bible.addEventListener("input", () => {
     
-    shoSpinaHideForm();
+    shoHideSpinaAndForm();
 
   // Current condition of the form
   let form1 = document.getElementById("the_form");
@@ -193,7 +183,7 @@ window.addEventListener("load", () => {
       }
     }
     
-    hideSpinaShoForm();
+    shoHideSpinaAndForm();
 
   });
 })
@@ -228,7 +218,7 @@ form.verse.addEventListener("input", () => {
 // __BOOK INPUT FUNCTION__ //
 function bookNameInput() {
 
-    shoSpinaHideForm();
+    shoHideSpinaAndForm();
 
     // Current condition of the form
     let form2 = document.getElementById("the_form");
@@ -270,14 +260,14 @@ function bookNameInput() {
       });
     }  
 
-    hideSpinaShoForm();
+    shoHideSpinaAndForm();
   }
 
 
   // __CHAPTER INPUT FUNCTION__ //
   function chapterInput() {
       
-      shoSpinaHideForm();
+      shoHideSpinaAndForm();
       
       // Current condition of the form
       let form3 = document.getElementById("the_form");
@@ -337,7 +327,7 @@ function bookNameInput() {
         });
       }
 
-      hideSpinaShoForm();
+      shoHideSpinaAndForm();
 
   }
 
