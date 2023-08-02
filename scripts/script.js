@@ -1,8 +1,7 @@
-var body = document.body;
-// remove toggle attribute from body
-body.toggleAttribute("hidden");
-
-var form = document.getElementById("the_form");
+//___________________
+//__THE SELECTORS__//|
+var form = document.getElementById("the_form"); // or
+var formSec = document.querySelector(".formSection");
 var copyRight = document.querySelector(".copy_right");
 var year = document.querySelector(".year");
 
@@ -16,6 +15,28 @@ var bibleSelect = form.bible;
 var bookSelect = form.book;
 var chapterSelect = form.chapter;
 var verseSelect = form.verse;
+
+//________________
+// __THE NAME__ //|
+//________________|
+window.addEventListener("load", ()=> {
+  let h6 = document.createElement("h6");
+  const pb = "Powered by ";
+  const him = "Tuhumbata Immanuel Hamhola ";
+  const copy = "&#169; 2023"
+  h6.innerHTML = `${pb}${him}${copy}`;
+  dinaye.appendChild(h6);
+})
+
+//_______________________
+// __LOADING SPINNER__ //|
+//_______________________|
+function shoHideSpinaAndForm() {
+  // Show/Hide spinner
+  spinner.toggleAttribute("hidden");
+  // Show/Hide form section
+  formSec.toggleAttribute("hidden");
+}
 
 // Bible translations
 var BIBLES = [
@@ -62,6 +83,7 @@ function newOptionsInitSelected(textContent, value) {
 //___ WHEN PAGE LOADS __ //
 // ______________________________________
 window.addEventListener("load", () => {
+
   let form0 = document.getElementById("the_form");
   let bibleSelect0 = form0.bible;
   // Before clearing put select element in new variable
@@ -101,22 +123,21 @@ window.addEventListener("load", () => {
         bibleSelect0.appendChild(option);
       });
       
-      // Hide spinner
-      spinner.classList.add("visually-hidden");
-      
+      shoHideSpinaAndForm();
+
     })
     .catch((error) => {
       console.error('An error occurred:', error);
     });
   });
   
+
   // ______________________________________
   //___ BIBLE TRANSLATION INPUT EVENT __ //
   // ______________________________________ 
   form.bible.addEventListener("input", () => {
     
-    // show spinner
-    spinner.classList.remove("visually-hidden");
+    shoHideSpinaAndForm();
 
   // Current condition of the form
   let form1 = document.getElementById("the_form");
@@ -161,9 +182,8 @@ window.addEventListener("load", () => {
         
       }
     }
-
-    // Hide spinner
-    spinner.classList.add("visually-hidden");
+    
+    shoHideSpinaAndForm();
 
   });
 })
@@ -194,69 +214,11 @@ form.verse.addEventListener("input", () => {
   verseInput();
 });
 
-window.addEventListener("load", ()=> {
-  let h6 = document.createElement("h6");
-  const pb = "Powered by ";
-  const him = "Tuhumbata Immanuel Hamhola ";
-  const copy = "&#174; 2023"
-  h6.innerHTML = `${pb}${him}${copy}`;
-  dinaye.appendChild(h6);
-})
-
-
-
-function verseInput() {
-
-      // Current condition of the form
-      let form4 = document.getElementById("the_form");
-      let verseSelect4 = form4.verse;
-
-      let verses = document.querySelector(".verses_paragraph");
-      let markIfExists = document.querySelector(".mark")
-        
-      // If mark elements exists please remove it
-      if (markIfExists !== null) {
-        // Extract text
-        let markText = markIfExists.textContent
-        // get previous sibling
-        let number = markIfExists.previousSibling
-
-        verses.removeChild(markIfExists);
-        
-        // reappend text
-        number.after(markText);
-        number.removeAttribute("class");
-      }
-
-      // Get selected index
-      let selected = verseSelect4.options.selectedIndex;      
-      let verseNumbers = verses.children;
-        
-        for (let i = 0; i < verseNumbers.length; i++) {
-          
-          if (Number(verseNumbers[i].textContent) == selected) {
-            
-            let verseText = verseNumbers[i].nextSibling;
-
-            let mark = document.createElement("mark");
-            mark.setAttribute("class", "bg-primary mark");
-            mark.append(verseText);
-
-            verseNumbers[i].setAttribute("class", "bg-primary");
-      
-            // append mark node after verseNumbers[i] node 
-            verseNumbers[i].after(mark);
-
-          }
-        }
-}
-
 
 // __BOOK INPUT FUNCTION__ //
 function bookNameInput() {
-  
-    // show spinner
-    spinner.classList.remove("visually-hidden");
+
+    shoHideSpinaAndForm();
 
     // Current condition of the form
     let form2 = document.getElementById("the_form");
@@ -297,17 +259,15 @@ function bookNameInput() {
         
       });
     }  
-    // Hide spinner
-    spinner.classList.add("visually-hidden");
 
+    shoHideSpinaAndForm();
   }
 
 
   // __CHAPTER INPUT FUNCTION__ //
   function chapterInput() {
       
-      // show spinner
-      spinner.classList.remove("visually-hidden");
+      shoHideSpinaAndForm();
       
       // Current condition of the form
       let form3 = document.getElementById("the_form");
@@ -366,9 +326,57 @@ function bookNameInput() {
   
         });
       }
-      // Hide spinner  
-      spinner.classList.add("visually-hidden");
+
+      shoHideSpinaAndForm();
 
   }
+
+
+  // __VERSE INPUT FUNCTION__ //
+  function verseInput() {
+
+    // Current condition of the form
+    let form4 = document.getElementById("the_form");
+    let verseSelect4 = form4.verse;
+
+    let verses = document.querySelector(".verses_paragraph");
+    let markIfExists = document.querySelector(".mark")
+      
+    // If mark elements exists please remove it
+    if (markIfExists !== null) {
+      // Extract text
+      let markText = markIfExists.textContent
+      // get previous sibling
+      let number = markIfExists.previousSibling
+
+      verses.removeChild(markIfExists);
+      
+      // reappend text
+      number.after(markText);
+      number.removeAttribute("class");
+    }
+
+    // Get selected index
+    let selected = verseSelect4.options.selectedIndex;      
+    let verseNumbers = verses.children;
+      
+      for (let i = 0; i < verseNumbers.length; i++) {
+        
+        if (Number(verseNumbers[i].textContent) == selected) {
+          
+          let verseText = verseNumbers[i].nextSibling;
+
+          let mark = document.createElement("mark");
+          mark.setAttribute("class", "bg-primary mark");
+          mark.append(verseText);
+
+          verseNumbers[i].setAttribute("class", "bg-primary");
+    
+          // append mark node after verseNumbers[i] node 
+          verseNumbers[i].after(mark);
+
+        }
+      }
+}
 
   

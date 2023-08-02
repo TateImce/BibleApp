@@ -7,43 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/img/Q.png" type="image/x-icon">
-    <!-- Dynamics links -->
+    <!-- Dynamic style links go here -->
 </head>
-<!-- Body hidden until styles are loaded -->
-<body hidden>
+
+<body>
     <div class="container w-75">
         <header class="m-2">
             <h1><span class="badge bg-primary shadow">Quick BIBLE App</span></h1>
         </header>
-        <section>
+        <div class="text-center theSpinner m-3">
+            <div class="spinner-border text-primary" role="status"></div>
+            <span class="">Loading... Please Wait</span>
+        </div>
+        <section class="formSection" hidden>
             <form class="row" id="the_form">
-                <div class="text-center theSpinner m-3">
-                    <div class="spinner-border text-primary" role="status"></div>
-                    <span class="">Loading... Please Wait</span>
+                <div>
+                    <label class="fw-bold" for="bible">Bible Translation</label>
+                    <select class="form-control" name="bible" id="bible">
+                        <option value="empty">Select</option>
+                    </select>
                 </div>
-                <label class="fw-bold" for="bible">Bible Translation</label>
-                <select class="form-control" name="bible" id="bible">
-                    <option value="empty">Select</option>
-                </select>
-                <label class="fw-bold" for="book">Book</label>
-                <select class="form-control" name="book" id="book">
-                    <option value="empty">Select</option>
-                </select>
-                <label class="fw-bold" for="chapter">Chapter</label>
-                <select class="form-control" name="chapter" id="chapter">
-                    <option value="empty">Select</option>
-                </select>
-                <label class="fw-bold" for="verse">Verse</label>
-                <select class="form-control" name="verse" id="verse">
-                    <option value="empty">Select</option>
-                </select>
+                <div class="col-auto">
+                    <label class="fw-bold" for="book">Book</label>
+                    <select class="form-control" name="book" id="book">
+                        <option value="empty">Select</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label class="fw-bold" for="chapter">Chapter</label>
+                    <select class="form-control" name="chapter" id="chapter">
+                        <option value="empty">Select</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <label class="fw-bold" for="verse">Verse</label>
+                    <select class="form-control" name="verse" id="verse">
+                        <option value="empty">Select</option>
+                    </select>
+                </div>
             </form>
-        </section>
-
-        <section class="d-flex flex-row mt-3">
-            <p class="year me-2"></p>
-            <p class="vr"></p>
-            <p class="copy_right ms-2"></p>
+            <div class="d-flex flex-row mt-3">
+                <p class="year me-2"></p>
+                <p class="vr"></p>
+                <p class="copy_right ms-2"></p>
+            </div>
         </section>
         <section class="row border border-black-50 bg-light rounded-2">
             <div class="show_verses m-1"><!-- Chapter content --></div>
@@ -54,7 +61,7 @@
     <script src="http://bibleapp/scripts/path.js" defer></script>
     <!-- <script src="https://tateimmsbible.netlify.app/scripts/path.js" defer></script> -->
     <!-- <script src="https://tateimce.github.io/bibleapp/scripts/path.js"></script> -->
-    <!-- Dynamic script links -->
+    <!-- Dynamic script links go here -->
 </body>
 
 </html>
